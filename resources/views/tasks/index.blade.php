@@ -1,5 +1,14 @@
 <!-- resources/views/tasks/index.blade.php -->
+
 <h1>Lista de Tarefas</h1>
+
+<!-- Verificar se há uma mensagem de sucesso na sessão -->
+@if (session('success'))
+    <div style="color: green;">
+        {{ session('success') }}
+    </div>
+@endif
+
 <a href="{{ route('tasks.create') }}">Criar Nova Tarefa</a>
 <ul>
     @foreach($tasks as $task)

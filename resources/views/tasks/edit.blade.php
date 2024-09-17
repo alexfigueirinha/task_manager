@@ -4,10 +4,13 @@
     @csrf
     @method('PUT')
     <label for="title">Título:</label>
-    <input type="text" name="title" id="title" value="{{ $task->title }}">
+    <input type="text" name="title" id="title" value="{{ old('title', $task->title) }}">
+    @if ($errors->has('title'))
+        <div style="color: red;">{{ $errors->first('title') }}</div>
+    @endif
     <br>
     <label for="description">Descrição:</label>
-    <textarea name="description" id="description">{{ $task->description }}</textarea>
+    <textarea name="description" id="description">{{ old('description', $task->description) }}"></textarea>
     <br>
     <button type="submit">Atualizar</button>
 </form>
