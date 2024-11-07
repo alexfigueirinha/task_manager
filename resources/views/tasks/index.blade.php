@@ -9,7 +9,19 @@
     </div>
 @endif
 
+<!-- Exibir erros globais (se houver) -->
+@if ($errors->any())
+    <div style="color: red;">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <a href="{{ route('tasks.create') }}">Criar Nova Tarefa</a>
+
 <ul>
     @foreach($tasks as $task)
         <li>
