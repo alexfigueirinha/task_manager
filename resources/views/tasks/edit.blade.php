@@ -23,7 +23,7 @@
     <br>
 
     <label for="description">Descrição:</label>
-    <textarea name="description" id="description">{{ old('description', $task->description) }}"></textarea>
+    <textarea name="description" id="description">{{ old('description', $task->description) }}</textarea>
     <br>
 
     <button type="submit">Atualizar</button>
